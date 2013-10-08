@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">serialization</string>
+    <string name="app_name">Serialization</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_second">SecondActivity</string>
+    <string name="view2">Get Cache</string>
+    <string name="text_placeholder">Get Cache</string>
+    <string name="create_object">Get Cache</string>
+    <string name="serialized_button">Show Serialized Data</string>
+    <string name="button_desc">Description</string>
 
 </resources>
