@@ -24,7 +24,7 @@ public class SecondActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_second);
 		
-		Button createObj = (Button) findViewById(R.id.button1);
+		Button createObj = (Button) findViewById(R.id.button_email);
 		createObj.setOnClickListener(new View.OnClickListener() {
 			
 			@Override

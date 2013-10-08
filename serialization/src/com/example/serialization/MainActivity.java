@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -22,7 +23,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Button b = (Button) findViewById(R.id.button1);
+		Button b = (Button) findViewById(R.id.button_email);
 		b.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -31,6 +32,21 @@ public class MainActivity extends Activity {
 				Intent i = new Intent(getApplicationContext(),SecondActivity.class);
 				startActivity(i);
 				
+			}
+		});
+		
+		/* *
+		 * 
+		 * Contact Button
+		 * 
+		 * */
+		ImageButton contact_button = (ImageButton)findViewById(R.id.button_contact);
+		contact_button.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getApplicationContext(),ContactActivity.class);
+				startActivity(i);
 			}
 		});
 		
