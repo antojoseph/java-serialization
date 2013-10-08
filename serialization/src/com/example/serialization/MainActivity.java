@@ -1,11 +1,12 @@
 package com.example.serialization;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -38,13 +39,15 @@ public class MainActivity extends Activity {
 		Car mycar = new Car("Petrol", "Saztro", 1989);
 		
 
-		
-		String FILENAME = "hello_file";
-
+		File myDir = new File(Constants.ROOTDIR + Constants.DIRNAME);    
+	    myDir.mkdirs();
+	    File file = new File (myDir, Constants.FILENAME);
 		FileOutputStream fos;
 		try {
-			fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
-			fos.write(mycar.toString().getBytes());
+			fos = new FileOutputStream(file);
+			ObjectOutputStream os = new ObjectOutputStream(fos);
+			os.writeObject(mycar);
+			os.close();
 			fos.close();
 		} catch (FileNotFoundException e) {
 			Toast.makeText(getApplicationContext(), "File Not Found !", Toast.LENGTH_LONG).show();

@@ -1,11 +1,17 @@
 package com.example.serialization;
 
-public class Car {
+import java.io.Serializable;
+
+public class Car implements Serializable{
 	
 
-	public String make;
-	public String model;
-	public int year;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 243838383201569877L;
+	private String make;
+	private String model;
+	private int year;
 	
 	public Car(String make, String model, int year) {
 		this.make = make;

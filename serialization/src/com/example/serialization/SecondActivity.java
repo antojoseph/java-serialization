@@ -1,12 +1,13 @@
 package com.example.serialization;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.View;
@@ -50,15 +51,18 @@ public void createObj(){
 	
     try
     {
-       FileInputStream fileIn =  getApplicationContext().openFileInput("hello_file");
+	    File myDir = new File(Constants.ROOTDIR + Constants.DIRNAME);
+	    File file = new File (myDir, Constants.FILENAME);
+	    FileInputStream fileIn = new FileInputStream(file);
        Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
        ObjectInputStream in = new ObjectInputStream(fileIn);
 
        Car somecar =  (Car) in.readObject();
        
-      Toast.makeText(getApplicationContext(), somecar.model, Toast.LENGTH_LONG).show();
+      Toast.makeText(getApplicationContext(), somecar.getModel(), Toast.LENGTH_LONG).show();
       
       in.close();
+      fileIn.close();
       
     }catch(IOException i)
     {
@@ -74,13 +78,17 @@ public void createObj(){
 	
 public  void readfromCache(){
 	String value = "";
-	FileInputStream fis;
+	
+    File myDir = new File(Constants.ROOTDIR + Constants.DIRNAME);
+    File file = new File (myDir, Constants.FILENAME);
+    
 	try {
-		fis = openFileInput("hello_file");
-		byte[] input = new byte[fis.available()];
-		while (fis.read(input) != -1) {
+		FileInputStream fileIn = new FileInputStream(file);
+		byte[] input = new byte[fileIn.available()];
+		while (fileIn.read(input) != -1) {
 			value += new String(input);
 		}
+		fileIn.close();
 
 	} catch (FileNotFoundException e) {
 		Toast.makeText(getApplicationContext(), "File Not Found", Toast.LENGTH_LONG).show();
