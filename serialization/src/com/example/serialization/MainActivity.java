@@ -39,8 +39,12 @@ public class MainActivity extends Activity {
 		Car mycar = new Car("Petrol", "Saztro", 1989);
 		
 
-		File myDir = new File(Constants.ROOTDIR + Constants.DIRNAME);    
-	    myDir.mkdirs();
+		File myDir = new File(Constants.ROOTDIR + Constants.DIRNAME);  
+		
+		if(!myDir.exists()){
+			myDir.mkdirs();
+		}
+		
 	    File file = new File (myDir, Constants.FILENAME);
 		FileOutputStream fos;
 		try {
