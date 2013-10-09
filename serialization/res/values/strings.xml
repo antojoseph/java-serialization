@@ -17,5 +17,6 @@
     <string name="address_four">Calicut</string>
     <string name="address_email">Email To gnchyperion@live.com</string>
     <string name="title_activity_contact">ContactActivity</string>
+    <string name="title_activity_map">MapActivity</string>
 
 </resources>

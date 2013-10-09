@@ -3,12 +3,29 @@
     package="com.example.serialization"
     android:versionCode="1"
     android:versionName="1.0" >
+        <permission
+        android:name="com.example.serialization.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="com.example.serialization.permission.MAPS_RECEIVE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+ 
+    <!-- Required to show current location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+ 
+    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -32,6 +49,15 @@
             android:name="com.example.serialization.ContactActivity"
             android:label="@string/title_activity_contact" >
         </activity>
+        <activity
+            android:name="com.example.serialization.MapActivity"
+            android:label="@string/title_activity_map" >
+        </activity>
+        
+         <!-- Goolge API Key -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDqELhB2t_w-R_fifWuGc8K1BF6XD3LU9k" />
     </application>
 
 </manifest>

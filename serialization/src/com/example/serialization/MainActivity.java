@@ -22,7 +22,15 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+		ImageButton map = (ImageButton) findViewById(R.id.imageButton5);
+		map.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent ( MainActivity.this,MapActivity.class);
+				startActivity(intent);
+			}
+		});
 		Button b = (Button) findViewById(R.id.button_email);
 		b.setOnClickListener(new View.OnClickListener() {
 			
