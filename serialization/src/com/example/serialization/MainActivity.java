@@ -1,19 +1,11 @@
 package com.example.serialization;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -22,13 +14,11 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		
-		
+
 		/* *
-		 * 
+		 * *
 		 * Contact Button
-		 * 
+		 * *
 		 * */
 		ImageButton contact_button = (ImageButton)findViewById(R.id.button_contact);
 		contact_button.setOnClickListener(new View.OnClickListener() {
