@@ -121,13 +121,4 @@
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/button_email"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tableLayout1"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="22dp"
-        android:text="@string/view2" />
-
 </RelativeLayout>

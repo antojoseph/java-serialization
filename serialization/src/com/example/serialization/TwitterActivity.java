@@ -35,8 +35,18 @@ public class TwitterActivity extends Activity{
 		Intent i = getIntent();
 		user = i.getStringExtra("user");
 		
-		TwitterFeeds tfeed = new TwitterFeeds();
-		tfeed.execute();
+		Util utility = new Util(this);
+		if(utility.isConnectingToInternet()==true){
+			TwitterFeeds tfeed = new TwitterFeeds();
+			tfeed.execute();
+		}
+		else{
+			List<String> message = new ArrayList<String>();
+			message.add("Internet Not Available.\r\n Login to Twitter and search for "+user);
+			TwitterListAdapter tweetsAdapter = new TwitterListAdapter(getApplicationContext(), message);
+			list_tweets.setAdapter(tweetsAdapter);
+		}
+		
 		
 	}
 	
